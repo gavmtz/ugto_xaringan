@@ -1,0 +1,294 @@
+/*
+CSS para diapositivas en Xaringan formato UG
+Autor: Gerardo Avila-Martínez
+Actualizado: 01-09-2022
+
+Colores oficiales:
+
+Pantone 540C oficial (Azul)
+  color: #003057;
+Pantone 121C oficial (Amarillo)
+  color: #FDD757;
+  TonosAmarillo[ #FED55E, #FDE294, #FCEFBE, ]
+Pantone 451C oficial (Arena)
+  color: #9B945F;
+*/
+
+/* -------  para personalizar texto ------- */
+
+.dorado     { color:   #9B945F }
+.amarillo   { color:   #FDD757 }
+.azul       { color:   #003057 }
+
+/* -------  *********************  ------- */
+
+/* Divisiones de columnas, definirlas como se muestran aqui*/
+
+/*  ejemplo:  ".pull-left-70[contenido]"     */
+
+.pull-left-70 { float: left; width: 66.5%;}
+.pull-right-30 { float: right; width: 28.5%;}
+.pull-right-30 + * { clear: both; }
+.pull-left-60 { float: left; width: 57%; }
+.pull-right-40 { float: right; width: 38%; }
+.pull-right-40 + * { clear: both; }
+.pull-left-50 { float: left; width: 47.5%; margin-top: 5px; }
+.pull-right-50 { float: right; width: 47.5%; margin-top: 5px; }
+.pull-right-50 + * { clear: both; margin-top: -5px; }
+.pull-left-40 { float: left; width: 38%; }
+.pull-right-60 { float: right; width: 57%; }
+.pull-right-60 + * { clear: both; }
+.pull-left-30 { float: left; width: 28.5%; }
+.pull-right-70 { float: right; width: 66.5%; }
+.pull-right-70 + * { clear: both; }
+
+/* -------  *********************  ------- */
+
+
+/* Encabezados y fuentes */
+
+h1, h2, h3 {
+  margin-top: 0;
+	/*original 0.5em*/
+	padding-top: 0.2em;
+	font-weight: 600;
+	margin-left: 0;
+}
+
+
+/* diapositiva regular parrafo */
+
+.remark-slide-content {
+	background-color: #FAFAFA;
+  /* muestra linea debajo de la diapositiva*/
+	/*border-bottom: 2px solid #003057;*/
+	font-size: 22px;
+	font-weight: 400;
+	line-height: 1.5;
+	/*Acomoda el texto de cada parrafo*/
+	padding: 2em 3em 1em 3em;
+}
+
+                          /* inverse slide */
+
+/* negro y blanco */
+.inverse {
+  background-color: #121316;
+  color: #ffffff;
+}
+
+/* colores de encabezados son los mismos a pesar de si son 'inverse' */
+
+.remark-slide-content h1,
+.inverse h1 {
+  color: #1C1B1B;
+  /*#9B945F;*/
+  font-size: 35px;
+  text-transform: none;
+}
+
+.remark-slide-content h2, 
+.inverse h2 {
+  color: #1C1B1B;
+  font-size: 24px;
+  text-transform: none;
+}
+
+.remark-slide-content h3,
+.inverse h3 {
+  color: #1C1B1B;
+  font-size: 18px; text-transform: none;
+}
+
+
+
+
+                /* Control sobre la primera diapositiva */
+.title-slide {
+  /*background-color: #121316;*/
+  background-image: url('../img/portada16_9.png');
+  background-size: cover;
+}
+.title-slide h1  {
+  color: #231F20;
+  font-family: 'Novecento';
+	font-size: 30px;
+	font-weight: 600;
+	text-align: center;
+	padding-top: 120px;
+}
+
+.title-slide h2  {
+	color: #231F20;
+	font-family: 'Raleway';
+	font-size: 30px;
+	font-weight: 600;
+	text-align: center;
+	padding-top: 3px;
+}
+/*
+.title-slide h3  {
+	color: #231F20;
+	font-family: 'Raleway';
+	font-size: 30px;
+	font-weight: 600;
+	text-align: center;
+	margin-left: 40px;
+	text-transform: none;
+	margin-bottom: 0;
+}*/
+/* Termina el control sobre la primera diapositiva */
+
+
+
+/* numero de diapositiva */
+.remark-slide-number {
+  font-size: 12pt;
+	font-family: 'Gandhi Sans';
+	/*negro*/
+	color: #272822;
+	opacity: 1;
+}
+/* inverso de numero de diapositiva */
+.inverse .remark-slide-number {
+	font-size: 12pt;
+	font-family: 'Gandhi Sans';
+	/*blanco #FAFAFA */
+	color: #FAFAFA;
+	opacity: 1;
+}
+
+
+/* Ajuste de espaciado para tabla horizontal */
+th, td {
+    padding:0 15px 0 15px;
+}
+.remark-slide table {
+  margin: auto;
+  border-top: 2px solid #003057;
+  border-bottom: 2px solid #003057;
+}
+.remark-slide table thead th { 
+  border-bottom: 1px solid #ddd;
+}
+
+th, td { padding: 5px; } /*tamanio celda para tabla*/
+.remark-slide thead,
+.remark-slide tfoot,
+.remark-slide tr:nth-child(even) { 
+  background: #C0C0C0; /*#F1E5AC*/
+}
+
+/* citas */
+blockquote {
+	margin: 0;
+}
+blockquote p {
+  display: block;
+  margin-top: 0.1em;
+  margin-bottom: 0.2em;
+  border-left: solid 5px #003057;
+	border-radius: 3px;
+	background-color: #ffffff;
+	color: #231F20;
+	padding: 1px;
+	/*padding-left: 1em;*/
+	text-align: justify;
+}
+
+blockquote p::before {
+  content: '\201C';
+}
+blockquote p::after {
+  content: '\201D';
+}
+
+/* color de enlaces */
+a, a > code {
+  color: #9B945F; /*rgb(249, 38, 114)*/ 
+  text-decoration: none; /* descarta fondo de color */
+}
+
+/* codigo en el texto general */
+.remark-inline-code{
+  /* background: #F5F5F5; /* lighter */
+  color: #FAFAFA;
+  background-color: #9B945F;
+  border-radius: 3px;
+  padding: 2px;
+}
+
+/* resaltado de codigo  */
+.remark-code-string-highlighted, 
+.remark-code-line-highlighted {
+    background-color: #9B945F !important;
+}
+
+/*-- Pie de pagina --*/
+.footnote {
+  position: absolute;
+  bottom: 1em;
+  padding-right: 2em;
+  font-size: 60%;
+  line-height: 1.3em;
+}
+
+/*-- Tamaño de fuentes --*/
+
+.font10 , .code10 .remark-code, .code10 .remark-inline-code{ font-size: 10%; }
+.font20 , .code20 .remark-code, .code20 .remark-inline-code{ font-size: 20%; }
+.font30 , .code30 .remark-code, .code30 .remark-inline-code{ font-size: 30%; }
+.font40 , .code40 .remark-code, .code40 .remark-inline-code{ font-size: 40%; }
+.font50 , .code50 .remark-code, .code50 .remark-inline-code{ font-size: 50%; }
+.font60 , .code60 .remark-code, .code60 .remark-inline-code{ font-size: 60%; }
+.font70 , .code70 .remark-code, .code70 .remark-inline-code{ font-size: 70%; }
+.font75 , .code75 .remark-code, .code75 .remark-inline-code{ font-size: 75%; }
+.font80 , .code80 .remark-code, .code80 .remark-inline-code{ font-size: 80%; }
+.font90 , .code90 .remark-code, .code90 .remark-inline-code{ font-size: 90%; }
+.font100, .code100 .remark-code, .code100 .remark-inline-code{ font-size: 100%; }
+.font110, .code110 .remark-code, .code110 .remark-inline-code{ font-size: 110%; }
+.font120, .code120 .remark-code, .code120 .remark-inline-code{ font-size: 120%; }
+.font130, .code130 .remark-code, .code130 .remark-inline-code{ font-size: 130%; }
+.font140, .code140 .remark-code, .code140 .remark-inline-code{ font-size: 140%; }
+.font150, .code150 .remark-code, .code150 .remark-inline-code{ font-size: 150%; }
+.font160, .code160 .remark-code, .code160 .remark-inline-code{ font-size: 160%; }
+.font170, .code170 .remark-code, .code170 .remark-inline-code{ font-size: 170%; }
+.font175, .code175 .remark-code, .code175 .remark-inline-code{ font-size: 175%; }
+.font180, .code180 .remark-code, .code180 .remark-inline-code{ font-size: 180%; }
+.font190, .code190 .remark-code, .code190 .remark-inline-code{ font-size: 190%; }
+.font200, .code200 .remark-code, .code200 .remark-inline-code{ font-size: 200%; }
+
+/* Portada. Usar cuando seal: false  en YAML */
+
+.title-slide-portada {
+  background-image: url(../img/portada16_9.png);
+  background-size: cover;
+}
+
+/* Interior */
+
+.title-slide-interior {
+  background-image: url(../img/interior.png);
+  background-position: top;
+  background-size: 100%;
+}
+
+/* Contraportada */
+
+.title-slide-final {
+  background-image: url(../img/contraportada16_9.png);
+  background-size: cover;
+}
+
+/* Fuente por medio de funcion */
+
+.nove{ font-family: 'Novecento', sans-serif;}
+.rubk{ font-family: 'Rubik', sans-serif;}
+.serif{ font-family: 'Gandhi Serif', serif;}
+
+/* Ventana scroll */
+
+.scroll-output {
+  height: 85%;
+  overflow-y: scroll;
+}

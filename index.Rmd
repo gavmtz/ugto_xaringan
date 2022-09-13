@@ -1,0 +1,173 @@
+---
+title: "Ejemplo Xaringan"
+subtitle: "Tesis que para obtener el titulo de ingeniero en biotecnologia<br>presenta:<br> Nombre(s) Apellido1 Apellido2 <br>Asesor: Nombre(s) Apellido1 Apellido2 <br>01/01/2023"
+#author: ""
+# institute: ""
+# date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: 
+      - css/base.css
+      - css/fuentes.css
+    lib_dir: libs
+    self_contained: true
+    seal: true
+    nature:
+      highlightStyle: googlecode
+      highlightLines: true
+#      countIncrementalSlides: false
+      ratio: "16:9"
+      slideNumberFormat: |
+        <div class="progress-bar-container">
+          <div class="progress-bar" style="width: calc(%current% / %total% * 100%);">
+          </div>
+        </div>
+---
+
+```{r configuracion, include=FALSE}
+# cargar aquí las librerias a usar
+#opts_chunk$set(warning=FALSE)
+xaringanExtra::use_tile_view()
+xaringanExtra::use_panelset()
+library(ggplot2)
+library(magrittr)
+library(palmerpenguins)
+library(gt)
+```
+
+class: title-slide-interior
+
+# .dorado[Estado del arte]
+
+## Publicaciones recientes
+
+### Esto es una lista
+
+- .rubk[2020]
+- .nove[2021]
+- 2022
+
+
+---
+class: title-slide-interior
+
+# .dorado[Dos columnas]
+
+.pull-left-50[
+.nove[Podemos comenzar a escribir una oración a mano izquierda]...
+]
+
+.pull-right-50[
+...y terminar del lado derecho.
+]
+
+
+---
+class: title-slide-interior
+
+# .dorado[Imágenes]
+
+.pull-left-30[
+
+## .dorado[Código]
+```{r ensamble, echo=FALSE}
+m_ensamble <- data.frame(
+  A = c(6,8,7,8), B = c(7,9,10,8),
+  C = c(11,16,11,13), D = c(10,12,11,9))
+m_ensamble_l <- m_ensamble %>% 
+  tidyr::pivot_longer(cols = 1:4,
+                      names_to = 'metodo',
+                      values_to = 'minutos')
+```
+
+```{r ens_graf_c, echo=TRUE, eval=FALSE}
+ggplot(m_ensamble_l,
+       aes(x = as.factor(metodo), #<<
+           y = minutos)) +
+geom_boxplot(fill = "white", #<<
+             colour = "#3366FF") +
+labs(title = "Optimización",
+     subtitle = "Mejora del ensamblado",
+     x = "Método",
+     y = "Minutos",
+     caption = "@nombre") +
+theme(
+    axis.title = element_text(size = 9), 
+    plot.title = element_text(size = 12, 
+                              hjust = 0.5),
+    plot.subtitle = element_text(size = 10,
+                                 hjust = 0.5,
+                                 colour = "#808080"),
+    axis.line = element_line(size = 0.5,
+                             colour = "#808080"),
+    axis.ticks = element_line(size = 1.0,
+                              colour = "#696969"))
+```
+]
+
+.pull-right-70[
+
+## .dorado[Salida]
+
+```{r ens_graf_ej, echo=FALSE, fig.height=5, fig.width=7, fig.align='center',dev='svg'}
+ggplot(m_ensamble_l,
+       aes(x = as.factor(metodo), 
+           y = minutos)) +
+geom_boxplot(fill = "white", 
+             colour = "#3366FF") +
+labs(title = "Optimización",
+     subtitle = "Mejora del ensamblado",
+     x = "Método",
+     y = "Minutos",
+     caption = "@nombre ") +
+theme(
+    axis.title = element_text(size = 12), 
+    plot.title = element_text(size = 15, 
+                              hjust = 0.5),
+    plot.subtitle = element_text(size = 12,
+                                 hjust = 0.5,
+                                 colour = "#808080"),
+    axis.line = element_line(size = 0.5,
+                             colour = "#808080"),
+    axis.ticks = element_line(size = 1.0,
+                              colour = "#696969"))
+```
+
+]
+
+
+---
+class: title-slide-interior
+
+# .dorado[Texto plano]
+
+<div class = text justify>
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.
+Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim.
+Fusce est. Vivamus a tellus.
+Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede.
+
+</div>
+
+
+---
+class: title-slide-interior
+
+# .amarillo[Texto plano 2]
+
+<div class = text justify>
+
+.serif[
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.
+Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim.
+Fusce est. Vivamus a tellus.
+Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede.
+]
+</div>
+
+
+---
+class: title-slide-final
+
+<!-- ültima dipositiva -->
